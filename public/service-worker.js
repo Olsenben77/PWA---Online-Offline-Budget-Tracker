@@ -1,4 +1,4 @@
-const files2store = ["/", "index.js", "db.js", "style.css"];
+const files2store = ["/", "index.js", "db.js", "style.css", "manifest.json"];
 const FILESTORE = "my-static-cache-v1";
 const DATASTORE = "my-data-cache-v1";
 
