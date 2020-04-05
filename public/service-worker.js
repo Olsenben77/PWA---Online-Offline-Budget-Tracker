@@ -1,28 +1,34 @@
-const files2store = ["/", "index.js", "db.js", "style.css", "manifest.json"];
+const files2store = [
+  "/",
+  "index.js",
+  "db.js",
+  "style.css",
+  "manifest.webmanifest",
+];
 const FILESTORE = "my-static-cache-v1";
 const DATASTORE = "my-data-cache-v1";
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", function (event) {
   event.waitUntil(
-    caches.open(FILESTORE).then(function(cache) {
+    caches.open(FILESTORE).then(function (cache) {
       console.log("opened static cache!");
       return cache.addAll(files2store);
     })
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", function (event) {
   if (event.request.url.includes("api")) {
     event.respondWith(
-      caches.open(DATASTORE).then(function(cache) {
+      caches.open(DATASTORE).then(function (cache) {
         return fetch(event.request)
-          .then(response => {
+          .then((response) => {
             if (response.status === 200) {
               cache.put(event.request.url, response.clone());
             }
             return response;
           })
-          .catch(err => {
+          .catch((err) => {
             return cache.match(event.request);
           });
       })
@@ -31,8 +37,8 @@ self.addEventListener("fetch", function(event) {
   }
 
   event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request).then(function(response) {
+    fetch(event.request).catch(function () {
+      return caches.match(event.request).then(function (response) {
         if (response) {
           return response;
         } else {
