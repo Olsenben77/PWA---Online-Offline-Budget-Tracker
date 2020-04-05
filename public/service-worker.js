@@ -8,6 +8,17 @@ const files2store = [
 const FILESTORE = "my-static-cache-v1";
 const DATASTORE = "my-data-cache-v1";
 
+//Tried to implement add-ons from "Workbox." Unfortunately could not get it to work.
+// const { GenerateSW } = require("workbox-webpack-plugin");
+
+// module.exports = {
+//   // Other webpack config...
+//   plugins: [
+//     // Other plugins...
+//     new GenerateSW(),
+//   ],
+// };
+
 self.addEventListener("install", function (event) {
   event.waitUntil(
     caches.open(FILESTORE).then(function (cache) {

@@ -19,22 +19,21 @@ Budget App that tracks funds with online and offline access. The frontend UI was
 
 ## Instructions
 
-To successfully run this application, the user should first clone the repository into a local file and run npm install. Using the local console, user will run "npm i" on the included dependencies. After, run "npm run start" and on your local browser, type in "localhost:3000." Alternatively, the deployed application can be visited at "https://quiet-shore-35700.herokuapp.com/." This will bring up the UI where funds can be added or subtracted. Going into the developer tools under
+To successfully run this application, the user should first clone the repository into a local file and run npm install. Using the local console, user will run "npm i" on the included dependencies. After, run "npm run start" and on your local browser, type in "localhost:3000." Alternatively, the deployed application can be visited at "https://quiet-shore-35700.herokuapp.com/." This will bring up the UI where funds can be added or subtracted. Going into the developer tools under Application, you can see "Manifest" and "Service Workers." Service worker allows the app to work offline.
+![Service-Worker](public/serviceworker.png)
 
-![UX](public/assets/images/Dashboard.png)
+while the Manifest gives the user the option to install the app as a PWA.
+
+![Manifest](public/manifest.png)
 
 ## Motivation
 
-Learning how to cache
-This project helped me to practice MongoDB and Mongoose schemas which were two new concepts learned this past week. Focusing my efforts on backend functionality and learning the syntax of JavaScript routes. I benefitted from the increased practice on NoSql and pushing projects to Heroku.
+This was a great assignment to learn about caching, offline capabilities, and PWA's. My motivation was to understand these flexible options, especially the creation of a mobile app. Constructing the service worker and manifest helped me to understand the ideas behind these files which are important concepts moving forward.
 
 ## Future Functionality
 
-For the future adding various aspects and addons to Chart.js would be helpful, especially for someone using this application consistently. More practice on routes and syncing up database information would also help expand the application.
+Future functionality for this app includes applying more offline caching opportunities like caching Google Fonts or CSS. Using these would not only add more functionality to the service worker but increase the overall performance of the app.
 
 ## References
 
-https://www.youtube.com/watch?v=yUsxRaOYVG4&feature=youtu.be
-https://www.youtube.com/watch?v=2E8eWUHJaNg&feature=youtu.be&list=PLOFmg4xbN_TPrB6w4rThsFanVxJI_SfER
-https://coursework.vschool.io/mongoose-crud/
-https://htmlcheatsheet.com/jquery/
+https://developers.google.com/web/tools/workbox
